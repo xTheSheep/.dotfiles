@@ -1,0 +1,197 @@
+@import url("colors.css");
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 98%;
+    padding: 0;
+}
+
+window#waybar {
+    background: alpha(@background, 0.8);
+    color: #E5C07B;
+    border-radius: 0px;
+}
+
+window#waybar.hidden {
+    opacity: 0.5;
+}
+
+tooltip {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    /*border: 1px solid #cba6f7;*/
+}
+
+tooltip label {
+    color: #cba6f7;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+} */
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+    margin: 0 3px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+}
+
+/* module groups */
+
+
+.modules-left {
+    padding: 2px 0;
+}
+
+.modules-right {
+    margin-right: 8px;
+    padding: 2px 0;
+}
+
+/* 
+.modules-center {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 0px solid #b4befe;
+    border-radius: 10px;
+}
+*/
+
+#workspaces button {
+    color: alpha(@color15, 0.8);
+    font-size: 1em;
+    padding: 3px 6px;
+}
+
+#workspaces button.active {
+    color: white;
+    font-size: 1.1em;
+    margin-top: 0;
+}
+
+#workspaces button.focused {
+    color: #d8dee9;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    color: @foreground;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+#window {
+    font-weight: 500;
+}
+
+#clock {
+    /*color: #61AFEF;*/
+    color: #E5C07B;
+    margin-left: 10px;
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: @color15;
+}
+
+#memory {
+    color: @color15;
+}
+
+#network {
+    background-color: #2980b9;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#pulseaudio {
+    color: @color15;
+}
+
+#pulseaudio.muted {
+    color: @color15;
+}
+
+#custom-power {
+    font-size: 1.1em;
+    font-weight: 400;
+    font-family: 'FiraCode Nerd Font';
+    padding: 0;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#custom-sheep {
+    margin-left: 5px;
+    margin-right: 15px;
+    padding-right: 5px;
+    color: #E5C07B;
+}
+
+#tray {
+    background-color: @color12;
+    border-radius: 15px;
+    margin: 4px 0;
+    padding: 0 12px;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
