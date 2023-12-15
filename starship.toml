@@ -1,0 +1,47 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+$character\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$docker_context\
+$package\
+$nodejs\
+$python\
+$ruby\
+$rust\
+$env_var\
+$container\
+$shell\
+[](bold purple)[](bold purple)[](bold purple) \
+"""
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[  ](fg:black bg:purple )[  ](bg:#313244 bold fg:purple)"
+error_symbol = "[  ](fg:black bg:purple )[  ](bg:#313244 bold fg:purple)"
+vimcmd_symbol = "[  ](fg:black bg:blue )[ NORMAL ](bg:blue bold fg:black)"
+
+[username]
+style_user = 'black bold'
+style_root = 'black bold'
+format = '(bold purple)[ $user ](fg:#313244 bg:purple bold )[](bold purple) '
+disabled = false
+show_always = true
+
+[git_branch]
+symbol = ""
+style = "bg:purple"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:purple"
+format = '[$all_status$ahead_behind ]($style) '
